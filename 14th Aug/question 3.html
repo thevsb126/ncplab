@@ -1,0 +1,35 @@
+<html>
+    <script type="text/javascript">
+    var num=[];
+    var ip;
+    var chk=true;
+    var max;
+    while(chk)
+    {
+        ip = prompt("Input numbers for histogram");
+        if(ip!==null)
+        {
+            num.push(ip)
+        }
+        else
+        {
+            chk=false
+        }
+    }
+    hist(num)
+    function hist(n)
+    {
+        for (let i=0;i<n.length;i++)
+        {
+            max=n[i]
+            for (let j=0;j<max;j++)
+            {
+                document.write("*")
+            }
+            document.write("<br>")
+            max=0;
+        }
+    }
+
+    </script>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <script type="text/javascript">
+        var val=[];
+        var nums;
+        c=prompt("Input number of scores")
+    for (let i=0;i<c;i++)
+    {
+        nums=prompt("Input score values")
+        val.push(nums)
+    }
+    for(let j=0;j<c;j++)
+    {
+        document.write(assignGrade(val[j]))
+    }
+
+    function assignGrade(v)
+    {
+        if (v>=60 && v<70)
+        {
+            return ("For " +v+" ,you got a D"+"<br>")
+        }
+        else if (v>=70 && v<80)
+        {
+            return ("For " +v+" ,you got a C"+"<br>")
+        }
+        else if (v>=80 && v<90)
+        {
+            return ("For " +v+" ,you got a B"+"<br>")
+        }
+        else if (v>=90 && v<=100)
+        {
+            return ("For " +v+" ,you got a A"+"<br>")
+        }
+        else
+        {
+            return ("For " +v+" ,you got a F"+"<br>")
+        }
+    }
+    </script>
+</html>
