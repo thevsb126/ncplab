@@ -1,0 +1,38 @@
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px saffron;
+            background-color: blue;
+        }
+    </style>
+    <title>Multiplication Table</title>
+    <script type="text/javascript">
+        var r = prompt("How many rows for your multiplication table?");
+        var c = prompt("How many columns for your multiplication table?");
+        if(r == "" || r == null)
+   	    	 r = 10;
+        if(c== "" || c== null)
+   	    	 c = 10;
+        mulTable(r, c);
+        function mulTable(r, c)
+        {
+            var j=1;
+            var op = "<table border='1' bordercolor='width='500' cellspacing='0'cellpadding='5'>";
+            for(i=1;i<=r;i++){
+                op = op + "<tr>";
+                while(j<=c){
+  		            op = op + "<td>" + i*j + "</td>";
+   		            j = j+1;
+   		        }
+   		    op = op + "</tr>";
+   		    j = 1;
+            }
+        op = op + "</table>";
+        document.write(op);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

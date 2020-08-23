@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <script type = "text/javascript">
+        var ip=prompt("Input number of Chapters")
+        var ninp;
+        var pinp;
+        var n=[]
+        var p=[]
+        var dots=". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+        for (let i=1;i<=ip;i++){
+            ninp = prompt("Input Chapter name")
+            pinp = prompt("Input page number")
+            var nval = i + ". " + ninp
+            n.push(nval)
+            p.push(pinp)
+        }
+        for (let i=0;i<n.length;i++){
+            var num = dots.length - n[i].length
+            var new_dots = dots.slice('.',num+1)
+            n[i] = n[i] + new_dots
+        }
+
+        for (let i=0;i<p.length;i++){
+            p[i] = (". . . . . . . . . ." + p[i]).slice(p[i].length)
+        }
+        for(let i=0;i<n.length;i++){
+            document.write(n[i]+p[i]+"<br>")
+        }
+
+        </script>
+</html>

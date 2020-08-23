@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body style="font-family: 'Press Start 2P', cursive; color:blue; background-color: white;" onload="startTime()">
+    <h2>Clock</h2>
+    <table border="2px">
+        <thead>
+            <tr>
+                <td><div id="date"></div></td>
+                <td><div id="day"></div></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="text-align: center;">
+                <td colspan="2"><div id="time"></div></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        let week=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById("date").innerText=today.getDate()+"-"+today.getMonth()+"-"+today.getFullYear()
+            document.getElementById("day").innerText=week[today.getDay()]
+            document.getElementById('time').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };
+            return i;
+        }
+    </script>
+</body>
+</html>
